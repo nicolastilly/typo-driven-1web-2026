@@ -4,32 +4,32 @@
 
 body {
     background-color: #483c38;
-    cursor: url('/images/precursor.png'), auto;
+    cursor: url('images/precursor.png'), auto;
 }
 
 @font-face {
     font-family: 'FlorDeRuina-Flor';
-    src: url('/fonts/FlorDeRuina-Flor.woff2') format('woff2');
+    src: url('fonts/FlorDeRuina-Flor.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'FlorDeRuina-Fractura';
-    src: url('/fonts/FlorDeRuina-Fractura.woff2') format('woff2');
+    src: url('fonts/FlorDeRuina-Fractura.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'FlorDeRuina-Germen';
-    src: url('/fonts/FlorDeRuina-Germen.woff2') format('woff2');
+    src: url('fonts/FlorDeRuina-Germen.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'FlorDeRuina-Ruina';
-    src: url('/fonts/FlorDeRuina-Ruina.woff2') format('woff2');
+    src: url('fonts/FlorDeRuina-Ruina.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'FlorDeRuina-Semilla';
-    src: url('/fonts/FlorDeRuina-Semilla.woff2') format('woff2');
+    src: url('fonts/FlorDeRuina-Semilla.woff2') format('woff2');
 }
 
 
