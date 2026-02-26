@@ -83,7 +83,7 @@ h3 {
     width: 100%;
     height: 100vh;
     place-items: center;
-    background: url(/images/bg-section1.jpeg) no-repeat center center fixed;
+    background: url(images/bg-section1.jpeg) no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -100,7 +100,7 @@ h3 {
     width: 100%;
     height: 80vh;
     place-items: center;
-    background: url(/images/bg-section2a.jpeg) no-repeat center center fixed;
+    background: url(images/bg-section2a.jpeg) no-repeat center center fixed;
     background-size: cover;
     color: #b44a04;
 }
@@ -165,7 +165,7 @@ h3 {
     min-height: 100vh;
     place-items: center;
     padding: 4em 0;
-    background: url(/images/bg-section3.jpeg) no-repeat center center fixed;
+    background: url(images/bg-section3.jpeg) no-repeat center center fixed;
     background-size: cover;
 }
 
