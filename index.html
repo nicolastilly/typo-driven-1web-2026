@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flor de Ruina</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <!--HEADER-->
+        <div class="herobanner">
+            <div class="herobannerdiv1">
+                <h1>Flor de Ruina</h1>
+                <h2>🌰🍒🍀🌱🌷🌼🌸🌹🌻🌾🍂🍃☆🌠✨☾☽⚐🍉❤🔑</h2>
+            </div>
+        </div>
+
+        <!--bloc texte-->
+        <div class="section1">
+            <div class="section1div1">
+                <h2>Flor de Ruina naît de la vie qui émerge dans la fissure, dans la crevasse. Ses variantes sont un
+                    processus conceptuel
+                    qui émule le cycle de vie d'une fleur, ainsi chaque glyphe germe, fleurit, se fane et enfin se
+                    fissure. </h2>
+            </div>
+        </div>
+
+        <!--glyphs-->
+        <div class="section2">
+            <div class="section2div1">
+                <h3>🌰</h3>
+                <p>Germen</p>
+            </div>
+            <div class="section2div2">
+                <h3>🍒</h3>
+                <p>Semilla</p>
+            </div>
+            <div class="section2div3">
+                <h3>🌷</h3>
+                <p>Flor</p>
+            </div>
+            <div class="section2div4">
+                <h3>🌸</h3>
+                <p>Ruina</p>
+            </div>
+            <div class="section2div5">
+                <h3>🌹</h3>
+                <p>Fractura</p>
+            </div>
+        </div>
+
+
+        <!--type tester-->
+        <div class="section3">
+            <div class="type-tester">
+                <h4>Type Tester</h4>
+
+                <div class="controls">
+                    <!-- Font variant -->
+                    <div class="control-group">
+                        <label>Variante</label>
+                        <div class="variant-buttons">
+                            <button class="variant-btn" data-font="FlorDeRuina-Germen" title="Germen">🌰</button>
+                            <button class="variant-btn active" data-font="FlorDeRuina-Semilla"
+                                title="Semilla">🍒</button>
+                            <button class="variant-btn" data-font="FlorDeRuina-Flor" title="Flor">🌷</button>
+                            <button class="variant-btn" data-font="FlorDeRuina-Ruina" title="Ruina">🌸</button>
+                            <button class="variant-btn" data-font="FlorDeRuina-Fractura" title="Fractura">🌹</button>
+                        </div>
+                    </div>
+
+                    <!-- Alignment -->
+                    <div class="control-group">
+                        <label>Alignement</label>
+                        <div class="align-buttons">
+                            <button class="align-btn active" data-align="left" title="Gauche">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <line x1="3" y1="12" x2="15" y2="12"></line>
+                                    <line x1="3" y1="18" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                            <button class="align-btn" data-align="center" title="Centré">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <line x1="6" y1="12" x2="18" y2="12"></line>
+                                    <line x1="4" y1="18" x2="20" y2="18"></line>
+                                </svg>
+                            </button>
+                            <button class="align-btn" data-align="right" title="Droite">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <line x1="9" y1="12" x2="21" y2="12"></line>
+                                    <line x1="6" y1="18" x2="21" y2="18"></line>
+                                </svg>
+                            </button>
+                            <button class="align-btn" data-align="justify" title="Justifié">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Size -->
+                    <div class="control-group">
+                        <label>Taille</label>
+                        <input type="range" class="size-slider" min="24" max="200" value="80">
+                        <span class="size-value">80px</span>
+                    </div>
+
+                    <!-- Line height -->
+                    <div class="control-group">
+                        <label>Interligne</label>
+                        <input type="range" class="line-height-slider" min="0.8" max="2" step="0.1" value="1.1">
+                        <span class="line-height-value">1.1</span>
+                    </div>
+
+                    <!-- Color -->
+                    <div class="control-group">
+                        <label>Couleur</label>
+                        <input type="color" class="color-picker" value="#231d19">
+                    </div>
+                </div>
+
+                <div class="text-area">
+                    <div class="editable-text" contenteditable="true"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            const textArea = document.querySelector('.editable-text');
+            const variantButtons = document.querySelectorAll('.variant-btn');
+            const alignButtons = document.querySelectorAll('.align-btn');
+            const sizeSlider = document.querySelector('.size-slider');
+            const sizeValue = document.querySelector('.size-value');
+            const lineHeightSlider = document.querySelector('.line-height-slider');
+            const lineHeightValue = document.querySelector('.line-height-value');
+            const colorPicker = document.querySelector('.color-picker');
+
+            // Font variant
+            variantButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    variantButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    textArea.style.fontFamily = btn.dataset.font;
+                });
+            });
+
+            // Alignment
+            alignButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    alignButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    textArea.style.textAlign = btn.dataset.align;
+                });
+            });
+
+            // Size
+            sizeSlider.addEventListener('input', (e) => {
+                const size = e.target.value;
+                textArea.style.fontSize = size + 'px';
+                sizeValue.textContent = size + 'px';
+            });
+
+            // Line height
+            lineHeightSlider.addEventListener('input', (e) => {
+                const lineHeight = e.target.value;
+                textArea.style.lineHeight = lineHeight;
+                lineHeightValue.textContent = lineHeight;
+            });
+
+            // Color
+            colorPicker.addEventListener('input', (e) => {
+                textArea.style.color = e.target.value;
+            });
+
+            // Initialize
+            textArea.style.fontFamily = 'FlorDeRuina-Semilla';
+            textArea.style.fontSize = '80px';
+            textArea.style.lineHeight = '1.1';
+            textArea.style.color = '#231d19';
+        </script>
+
+
+    </body>
+
+</html>

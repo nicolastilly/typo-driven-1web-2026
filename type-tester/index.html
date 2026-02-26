@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Type tester</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Fira+Code:wght@300..700&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:wght@100..900&family=Open+Sans:wght@300..800&family=Oswald:wght@200..700&family=Playfair+Display:wght@400..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Source+Code+Pro:wght@200..900&family=Work+Sans:wght@100..900&display=swap"
+            rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: system-ui, -apple-system, sans-serif;
+                background: #f5f5f5;
+                min-height: 100vh;
+                padding: 2rem;
+            }
+
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+            }
+
+            h1 {
+                font-size: 1.25rem;
+                font-weight: 500;
+                color: #333;
+                margin-bottom: 1.5rem;
+            }
+
+            .controls {
+                display: flex;
+                gap: 1.5rem;
+                margin-bottom: 1.5rem;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .control-group {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .control-group label {
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                color: #666;
+            }
+
+            /* Alignment buttons */
+            .align-buttons {
+                display: flex;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                overflow: hidden;
+            }
+
+            .align-btn {
+                background: white;
+                border: none;
+                padding: 0.5rem 0.75rem;
+                cursor: pointer;
+                transition: background 0.15s;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .align-btn:not(:last-child) {
+                border-right: 1px solid #ddd;
+            }
+
+            .align-btn:hover {
+                background: #f0f0f0;
+            }
+
+            .align-btn.active {
+                background: #333;
+                color: white;
+            }
+
+            .align-btn svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            /* Weight slider */
+            .weight-slider {
+                width: 120px;
+                height: 4px;
+                -webkit-appearance: none;
+                background: #ddd;
+                border-radius: 2px;
+                outline: none;
+            }
+
+            .weight-slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 16px;
+                height: 16px;
+                background: #333;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            .weight-value {
+                font-size: 0.875rem;
+                color: #333;
+                min-width: 2.5rem;
+                font-variant-numeric: tabular-nums;
+            }
+
+            /* Color picker */
+            .color-picker {
+                width: 32px;
+                height: 32px;
+                border: 2px solid #ddd;
+                border-radius: 6px;
+                cursor: pointer;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            .color-picker::-webkit-color-swatch-wrapper {
+                padding: 0;
+            }
+
+            .color-picker::-webkit-color-swatch {
+                border: none;
+            }
+
+            /* Text area */
+            .text-area {
+                background: white;
+                border: 1px solid #ddd;
+                border-radius: 12px;
+                padding: 2rem;
+                min-height: 300px;
+            }
+
+            .editable-text {
+                font-size: 3rem;
+                line-height: 1.3;
+                outline: none;
+                min-height: 200px;
+                word-break: break-word;
+            }
+
+            .editable-text:empty::before {
+                content: "Tapez votre texte ici...";
+                color: #ccc;
+            }
+
+            /* Font size control */
+            .size-slider {
+                width: 100px;
+                height: 4px;
+                -webkit-appearance: none;
+                background: #ddd;
+                border-radius: 2px;
+                outline: none;
+            }
+
+            .size-slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 16px;
+                height: 16px;
+                background: #333;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            .size-value {
+                font-size: 0.875rem;
+                color: #333;
+                min-width: 3rem;
+                font-variant-numeric: tabular-nums;
+            }
+
+            /* Line height slider */
+            .line-height-slider {
+                width: 80px;
+                height: 4px;
+                -webkit-appearance: none;
+                background: #ddd;
+                border-radius: 2px;
+                outline: none;
+            }
+
+            .line-height-slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 16px;
+                height: 16px;
+                background: #333;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            .line-height-value {
+                font-size: 0.875rem;
+                color: #333;
+                min-width: 2rem;
+                font-variant-numeric: tabular-nums;
+            }
+
+            /* Font select */
+            .font-select {
+                padding: 0.5rem 0.75rem;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                background: white;
+                font-size: 0.875rem;
+                color: #333;
+                cursor: pointer;
+                min-width: 150px;
+            }
+
+            .font-select:focus {
+                outline: none;
+                border-color: #333;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Type Tester</h1>
+
+            <div class="controls">
+                <!-- Alignment -->
+                <div class="control-group">
+                    <label>Alignement</label>
+                    <div class="align-buttons">
+                        <button class="align-btn active" data-align="left" title="Gauche">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="12" x2="15" y2="12"></line>
+                                <line x1="3" y1="18" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                        <button class="align-btn" data-align="center" title="Centré">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="6" y1="12" x2="18" y2="12"></line>
+                                <line x1="4" y1="18" x2="20" y2="18"></line>
+                            </svg>
+                        </button>
+                        <button class="align-btn" data-align="right" title="Droite">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="9" y1="12" x2="21" y2="12"></line>
+                                <line x1="6" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </button>
+                        <button class="align-btn" data-align="justify" title="Justifié">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Weight -->
+                <div class="control-group">
+                    <label>Graisse</label>
+                    <input type="range" class="weight-slider" min="100" max="900" step="100" value="400">
+                    <span class="weight-value">400</span>
+                </div>
+
+                <!-- Size -->
+                <div class="control-group">
+                    <label>Taille</label>
+                    <input type="range" class="size-slider" min="16" max="120" value="48">
+                    <span class="size-value">48px</span>
+                </div>
+
+                <!-- Color -->
+                <div class="control-group">
+                    <label>Couleur</label>
+                    <input type="color" class="color-picker" value="#333333">
+                </div>
+
+                <!-- Line height -->
+                <div class="control-group">
+                    <label>Interligne</label>
+                    <input type="range" class="line-height-slider" min="0.8" max="2.5" step="0.1" value="1.3">
+                    <span class="line-height-value">1.3</span>
+                </div>
+
+                <!-- Font family -->
+                <div class="control-group">
+                    <label>Police</label>
+                    <select class="font-select">
+                        <optgroup label="Sans-serif">
+                            <option value="system-ui, -apple-system, sans-serif">System UI</option>
+                            <option value="Arial, sans-serif">Arial</option>
+                            <option value="Helvetica, Arial, sans-serif">Helvetica</option>
+                            <option value="'Inter', sans-serif">Inter</option>
+                            <option value="'Roboto', sans-serif">Roboto</option>
+                            <option value="'Open Sans', sans-serif">Open Sans</option>
+                            <option value="'Montserrat', sans-serif">Montserrat</option>
+                            <option value="'Poppins', sans-serif">Poppins</option>
+                            <option value="'Work Sans', sans-serif">Work Sans</option>
+                        </optgroup>
+                        <optgroup label="Serif">
+                            <option value="Georgia, serif">Georgia</option>
+                            <option value="'Times New Roman', Times, serif">Times New Roman</option>
+                            <option value="'Playfair Display', serif">Playfair Display</option>
+                            <option value="'Merriweather', serif">Merriweather</option>
+                            <option value="'Lora', serif">Lora</option>
+                            <option value="'Libre Baskerville', serif">Libre Baskerville</option>
+                        </optgroup>
+                        <optgroup label="Monospace">
+                            <option value="'SF Mono', 'Fira Code', monospace">SF Mono</option>
+                            <option value="'Fira Code', monospace">Fira Code</option>
+                            <option value="'JetBrains Mono', monospace">JetBrains Mono</option>
+                            <option value="'Source Code Pro', monospace">Source Code Pro</option>
+                            <option value="Consolas, monospace">Consolas</option>
+                        </optgroup>
+                        <optgroup label="Display">
+                            <option value="'Bebas Neue', sans-serif">Bebas Neue</option>
+                            <option value="'Oswald', sans-serif">Oswald</option>
+                            <option value="'Abril Fatface', serif">Abril Fatface</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <div class="text-area">
+                <div class="editable-text" contenteditable="true"></div>
+            </div>
+        </div>
+
+        <script>
+            const textArea = document.querySelector('.editable-text');
+            const alignButtons = document.querySelectorAll('.align-btn');
+            const weightSlider = document.querySelector('.weight-slider');
+            const weightValue = document.querySelector('.weight-value');
+            const sizeSlider = document.querySelector('.size-slider');
+            const sizeValue = document.querySelector('.size-value');
+            const colorPicker = document.querySelector('.color-picker');
+            const lineHeightSlider = document.querySelector('.line-height-slider');
+            const lineHeightValue = document.querySelector('.line-height-value');
+            const fontSelect = document.querySelector('.font-select');
+
+            // Alignment
+            alignButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    alignButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    textArea.style.textAlign = btn.dataset.align;
+                });
+            });
+
+            // Weight
+            weightSlider.addEventListener('input', (e) => {
+                const weight = e.target.value;
+                textArea.style.fontWeight = weight;
+                weightValue.textContent = weight;
+            });
+
+            // Size
+            sizeSlider.addEventListener('input', (e) => {
+                const size = e.target.value;
+                textArea.style.fontSize = size + 'px';
+                sizeValue.textContent = size + 'px';
+            });
+
+            // Color
+            colorPicker.addEventListener('input', (e) => {
+                textArea.style.color = e.target.value;
+            });
+
+            // Line height
+            lineHeightSlider.addEventListener('input', (e) => {
+                const lineHeight = e.target.value;
+                textArea.style.lineHeight = lineHeight;
+                lineHeightValue.textContent = lineHeight;
+            });
+
+            // Font family
+            fontSelect.addEventListener('change', (e) => {
+                textArea.style.fontFamily = e.target.value;
+            });
+
+            // Initialize
+            textArea.style.fontSize = '48px';
+            textArea.style.fontWeight = '400';
+            textArea.style.color = '#333333';
+            textArea.focus();
+        </script>
+    </body>
+
+</html>
