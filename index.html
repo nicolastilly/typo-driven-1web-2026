@@ -6,6 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Flor de Ruina</title>
         <link rel="stylesheet" href="style.css">
+
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     </head>
 
     <body>
@@ -30,23 +33,23 @@
 
         <!--glyphs-->
         <div class="section2">
-            <div class="section2div1">
+            <div class="section2div1" data-aos="fade-up" data-aos-duration="2000">
                 <h3>🌰</h3>
                 <p>Germen</p>
             </div>
-            <div class="section2div2">
+            <div class="section2div2" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="600">
                 <h3>🍒</h3>
                 <p>Semilla</p>
             </div>
-            <div class="section2div3">
+            <div class="section2div3" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1200">
                 <h3>🌷</h3>
                 <p>Flor</p>
             </div>
-            <div class="section2div4">
+            <div class="section2div4" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1800">
                 <h3>🌸</h3>
                 <p>Ruina</p>
             </div>
-            <div class="section2div5">
+            <div class="section2div5" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="2400">
                 <h3>🌹</h3>
                 <p>Fractura</p>
             </div>
@@ -158,6 +161,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
         <script>
+            //AOS init
+            AOS.init();
+            //AOS init
+
             const textArea = document.querySelector('.editable-text');
             const variantButtons = document.querySelectorAll('.variant-btn');
             const alignButtons = document.querySelectorAll('.align-btn');
