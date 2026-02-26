@@ -67,7 +67,7 @@ h3 {
     height: 100vh;
     place-items: center;
     background-color: black;
-    background: url(/images/bg-hero-banner.jpeg) no-repeat center center fixed;
+    background: url(images/bg-hero-banner.jpeg) no-repeat center center fixed;
     background-size: cover;
 }
 
