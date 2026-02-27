@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #483c38;
+    background-color: #1d1411;
     cursor: url('images/precursor.png'), auto;
 }
 
@@ -56,6 +56,88 @@ h3 {
     text-align: center;
 }
 
+h4 {
+    font-family: 'FlorDeRuina-Semilla';
+    color: #231d19;
+    font-size: 6em;
+    text-align: center;
+}
+
+
+/*MENU*/
+
+#menu {
+    font-family: 'FlorDeRuina-Flor';
+    color: white;
+    font-size: 1.4em;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: #111;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    font-family: 'FlorDeRuina-Flor';
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
 
 
 /*hero banner*/
@@ -379,4 +461,97 @@ h3 {
     height: 70vh;
     max-height: 800px;
     transform-origin: 50% 100%;
+}
+
+
+/*section 5 specimen*/
+.section5 {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 10px;
+    place-items: center;
+    background: url(images/bg-section5.jpeg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.section5div1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.section5div2 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+/*footer*/
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 80px);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 100%;
+    place-items: center;
+}
+
+.footer p {
+    font-family: 'FlorDeRuina-Flor';
+    color: #f5e6d3;
+    font-size: 1.3em;
+}
+
+.footerdiv1 {
+    grid-area: 1 / 1 / 2 / 2;
+    text-align: center;
+}
+
+.footerdiv2 {
+    grid-area: 2 / 1 / 3 / 2;
+    text-align: center;
+}
+
+.footerdiv3 {
+    grid-area: 1 / 2 / 2 / 3;
+    text-align: center;
+}
+
+.footerdiv4 {
+    grid-area: 2 / 2 / 3 / 3;
+    text-align: center;
+}
+
+.footerdiv5 {
+    grid-area: 1 / 3 / 2 / 4;
+    text-align: center;
+}
+
+.footerdiv6 {
+    grid-area: 2 / 3 / 3 / 4;
+    text-align: center;
+}
+
+
+/*download*/
+.download {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    width: 100%;
+    height: 40vh;
+    place-items: center;
+}
+
+.download a {
+    font-family: 'FlorDeRuina-Germen';
+    font-size: 4em;
+    color: white;
+    text-decoration: dashed;
+}
+
+.downloaddiv1 {
+    grid-area: 1 / 1 / 2 / 2;
+    text-align: center;
 }
