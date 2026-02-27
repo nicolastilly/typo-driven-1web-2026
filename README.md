@@ -4,3 +4,9 @@ Démo du cours "T2 - projet : typography driven design" pour la réalisation d'u
 
 - Font utilisée : [Flor de ruina par Velvetyne](https://velvetyne.fr/fr/fonts/flor-de-ruina/)
 - Images : [public.work](https://www.cosmos.so/public-work)
+
+### Démos annexes
+
+- [Type tester](type-tester/index.html)
+- [Model Viewer](model-viewer/index.html)
+- [Liquid effect](liquid-effect/index.html)
